@@ -1,4 +1,4 @@
-# Estacionamento Pro - Sistema de Gestão
+# Estacionamento - Sistema de Gestão
 
 Sistema web para controle de fluxo de veículos em estacionamentos, permitindo o cadastro detalhado de frotas e o monitoramento de tempo de permanência com cálculo automático de valores.
 
