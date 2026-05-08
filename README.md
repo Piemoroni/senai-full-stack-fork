@@ -85,21 +85,19 @@ O Front-end utiliza HTML, CSS e JavaScript puros:
 ## Como Testar
 
 ### Teste de Fluxo Completo
-1. **Cadastrar Veículo:** Clique em **"Novo Veículo"**, preencha os campos (Placa, Proprietário, Marca, etc.) e salve. O card deve aparecer imediatamente na lista.
-2. **Registrar Entrada:** Clique em **"Nova Estadia"**, insira a placa de um veículo já cadastrado e defina o valor por hora.
-3. **Monitorar Estadia:** O card aparecerá na seção de estadias com o status **Ativo**.
-4. **Finalizar Estadia:** No card da estadia, clique no botão **Finalizar**. 
+1. Cadastrar Veículo: Clique em "Novo Veículo", preencha os campos (Placa, Proprietário, Marca, etc.) e salve. O card deve aparecer imediatamente na lista.
+2. Registrar Entrada: Clique em "Nova Estadia", insira a placa de um veículo já cadastrado e defina o valor por hora.
+3. Monitorar Estadia: O card aparecerá na seção de estadias com o status Ativo.
+4. Finalizar Estadia: No card da estadia, clique no botão Finalizar. 
    - O sistema registrará o horário de saída.
    - O valor total será calculado com base no tempo de permanência.
-   - O card mudará para a cor **Azul** (Finalizada).
-5. **Excluir Dados:** Teste os botões de exclusão em ambos os módulos para validar a remoção no banco de dados.
+   - O card mudará para a cor Azul (Finalizada).
+5. Excluir Dados: Teste os botões de exclusão em ambos os módulos para validar a remoção no banco de dados.
 
 ### Validação de Endpoint (via Insomnia)
 Para testar a recepção de dados diretamente na API:
-- **Método:** `POST`
-- **URL:** `http://localhost:3000/automovel/cadastrar`
-- **Body:** Use o JSON detalhado na seção "Especificações da API".
-
+- Método: `POST`
+- URL: `http://localhost:3000/automovel/cadastrar`
 ---
 
 ```
