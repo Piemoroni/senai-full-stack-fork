@@ -90,6 +90,3 @@ git clone https://github.com/seu-usuario/seu-repositorio.git
 
 Projeto desenvolvido para fins educacionais por Pietra Moroni.
 
-```
-
-```
