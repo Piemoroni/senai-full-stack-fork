@@ -9,7 +9,7 @@ Sistema web para controle de fluxo de veículos em estacionamentos, permitindo o
 | ![tela1](./img/home.png) | ![tela2](./img/cadastro.png) |
 
 | Cadastro de Estadias | Estadia em Andamento |
-|---|---|---|
+|---|---|
 | ![tela3](./img/estadia.png) | ![tela4](./img/andamento.png) | 
 
 | Estadia Finalizada |
