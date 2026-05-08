@@ -1,8 +1,8 @@
-# Estacionamento - Sistema de Gestão
+# Estacionamento ACME - Sistema de Gestão
 
-Sistema web para controle de fluxo de veículos em estacionamentos, permitindo o cadastro detalhado de frotas e o monitoramento de tempo de permanência com cálculo automático de valores.
+Sistema web completo para gerenciamento de pátio, desenvolvido para controlar o cadastro de veículos e o fluxo de estadias com cálculo automatizado de valores.
 
-## Demonstração
+## ## Demonstração
 
 | Tela Inicial | Cadastro de Veículos |
 |---|---|
@@ -18,29 +18,9 @@ Sistema web para controle de fluxo de veículos em estacionamentos, permitindo o
 
 ---
 
-## Funcionalidades
+## Especificações da API
 
-- **Módulo de Veículos**:
-  - Cadastro completo seguindo rigorosamente os requisitos da API.
-  - Listagem de veículos com visualização de proprietário e marca.
-  - Exclusão de veículos cadastrados.
-- **Módulo de Estadias**:
-  - Registro de entrada vinculada à placa.
-  - Botão de **Finalizar** direto no card (registra saída e calcula valor).
-  - Diferenciação visual: Estadias finalizadas ficam em **azul**.
-  - Exclusão de registros de histórico.
-
-
-##  Como Testar o Projeto
-
-Para garantir que a integração entre o Front-end e o Back-end está funcionando perfeitamente, siga estes passos:
-
-### 1. Testando a API (Via Insomnia ou Postman)
-
-Para validar se o seu servidor aceita os campos exatamente como solicitado, envie um **POST** para:
-`http://localhost:3000/automovel/cadastrar`
-
-**Corpo da Requisição (JSON):**
+Para o funcionamento correto da integração, o Back-end exige que o objeto de veículo contenha exatamente estes campos:
 
 ```json
 {
@@ -56,37 +36,74 @@ Para validar se o seu servidor aceita os campos exatamente como solicitado, envi
 
 ```
 
-### 2. Testando o Fluxo no Front-end
-
-1. **Cadastro de Veículo:** Abra o `index.html`, clique em **Novo Veículo**, preencha os dados e salve. Verifique se o card aparece na lista superior.
-2. **Entrada de Estadia:** Clique em **Nova Estadia**, insira a placa cadastrada e defina um valor hora (ex: 10.00).
-3. **Saída (Cálculo):** No card da estadia que acabou de ser criada, clique no botão **Finalizar**.
-* O sistema deve registrar a hora atual.
-* O card deve mudar para a cor **azul**.
-* O valor total deve aparecer calculado (Valor Hora × Tempo de Permanência).
-
-
-4. **Exclusão:** Teste os botões de excluir tanto no veículo quanto na estadia para limpar o banco de dados.
-
-### 3. Verificação de Console
-
-Pressione `F12` no navegador e vá em **Console**. Se algum dado não salvar, o erro aparecerá ali (geralmente erros de CORS ou campos faltando no JSON).
-
 ---
 
-## Configuração e Instalação
+## Como Iniciar o Projeto
 
-1. **Clone este repositório**:
+### 1. Configurando o Back-end (API ACME)
+
+1. Acesse o diretório da API:
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+cd api
 
 ```
 
 
-2. **Servidor (Back-end)**: Certifique-se de que a API está rodando na porta `3000`.
-3. **Cliente (Front-end)**: Abra o arquivo `index.html` diretamente no seu navegador.
+2. Instale as dependências:
+```bash
+npm install
+
+
+```
+
+```
+3. Prepare o banco de dados (Prisma):
+   ```bash
+   npx prisma generate
+   npx prisma migrate dev --name init
+
+```
+
+4. Inicie o servidor:
+```bash
+npm start
+
+
+```
+
+```
+
+### 2. Iniciando o Front-end
+O Front-end utiliza HTML, CSS e JavaScript puros:
+
+1. Localize a pasta raiz do projeto.
+2. Abra o arquivo `index.html` diretamente no seu navegador.
+3. Certifique-se de que o servidor Node.js (Back-end) está ativo para que os cards sejam carregados.
 
 ---
 
-Projeto desenvolvido para fins educacionais por Pietra Moroni.
+## Como Testar
 
+### Teste de Fluxo Completo
+1. **Cadastrar Veículo:** Clique em **"Novo Veículo"**, preencha os campos (Placa, Proprietário, Marca, etc.) e salve. O card deve aparecer imediatamente na lista.
+2. **Registrar Entrada:** Clique em **"Nova Estadia"**, insira a placa de um veículo já cadastrado e defina o valor por hora.
+3. **Monitorar Estadia:** O card aparecerá na seção de estadias com o status **Ativo**.
+4. **Finalizar Estadia:** No card da estadia, clique no botão **Finalizar**. 
+   - O sistema registrará o horário de saída.
+   - O valor total será calculado com base no tempo de permanência.
+   - O card mudará para a cor **Azul** (Finalizada).
+5. **Excluir Dados:** Teste os botões de exclusão em ambos os módulos para validar a remoção no banco de dados.
+
+### Validação de Endpoint (via Insomnia)
+Para testar a recepção de dados diretamente na API:
+- **Método:** `POST`
+- **URL:** `http://localhost:3000/automovel/cadastrar`
+- **Body:** Use o JSON detalhado na seção "Especificações da API".
+
+---
+
+```
+
+```
+
+```
