@@ -73,7 +73,7 @@ npm start
 
 ```
 
-### 2. Iniciando o Front-end
+2. Iniciando o Front-end
 O Front-end utiliza HTML, CSS e JavaScript puros:
 
 1. Localize a pasta raiz do projeto.
@@ -82,9 +82,9 @@ O Front-end utiliza HTML, CSS e JavaScript puros:
 
 ---
 
-## Como Testar
+Como Testar
 
-### Teste de Fluxo Completo
+Teste de Fluxo Completo
 1. Cadastrar Veículo: Clique em "Novo Veículo", preencha os campos (Placa, Proprietário, Marca, etc.) e salve. O card deve aparecer imediatamente na lista.
 2. Registrar Entrada: Clique em "Nova Estadia", insira a placa de um veículo já cadastrado e defina o valor por hora.
 3. Monitorar Estadia: O card aparecerá na seção de estadias com o status Ativo.
@@ -94,7 +94,7 @@ O Front-end utiliza HTML, CSS e JavaScript puros:
    - O card mudará para a cor Azul (Finalizada).
 5. Excluir Dados: Teste os botões de exclusão em ambos os módulos para validar a remoção no banco de dados.
 
-### Validação de Endpoint (via Insomnia)
+Validação de Endpoint (via Insomnia)
 Para testar a recepção de dados diretamente na API:
 - Método: `POST`
 - URL: `http://localhost:3000/automovel/cadastrar`
