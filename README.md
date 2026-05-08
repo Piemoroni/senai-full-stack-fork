@@ -1,8 +1,8 @@
-# Estacionamento ACME - Sistema de Gestão
+# Estacionamento - Sistema de Gestão
 
 Sistema web completo para gerenciamento de pátio, desenvolvido para controlar o cadastro de veículos e o fluxo de estadias com cálculo automatizado de valores.
 
-## ## Demonstração
+## Demonstração
 
 | Tela Inicial | Cadastro de Veículos |
 |---|---|
